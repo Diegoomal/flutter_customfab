@@ -79,36 +79,6 @@ class _CustomFabState extends State<CustomFab>
     isOpened = !isOpened;
   }
 
-  // Widget add() {
-  //   return new Container(
-  //     child: FloatingActionButton(
-  //       onPressed: null,
-  //       tooltip: 'Add',
-  //       child: Icon(Icons.add),
-  //     ),
-  //   );
-  // }
-
-  // Widget image() {
-  //   return new Container(
-  //     child: FloatingActionButton(
-  //       onPressed: null,
-  //       tooltip: 'Image',
-  //       child: Icon(Icons.image),
-  //     ),
-  //   );
-  // }
-
-  // Widget inbox() {
-  //   return new Container(
-  //     child: FloatingActionButton(
-  //       onPressed: null,
-  //       tooltip: 'Inbox',
-  //       child: Icon(Icons.inbox),
-  //     ),
-  //   );
-  // }
-
   Widget baseButtonToggle() {
     return FloatingActionButton(
       backgroundColor: _animateColor.value,
@@ -121,27 +91,6 @@ class _CustomFabState extends State<CustomFab>
     );
   }
 
-  // Show only toggle button
-  // @override
-  // Widget build(BuildContext context) {
-  //   return toggle();
-  // }
-
-  // Show all buttons
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Column(
-  //     mainAxisAlignment: MainAxisAlignment.end,
-  //     children: <Widget>[
-  //       add(),
-  //       image(),
-  //       inbox(),
-  //       toggle(),
-  //     ],
-  //   );
-  // }
-
-  // Hide or Show by toggle
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -149,17 +98,14 @@ class _CustomFabState extends State<CustomFab>
       children: <Widget>[
         Transform(
           transform: Matrix4.translationValues(0.0, _translateButton.value * 3.0, 0.0),
-          // child: add(),
           child: new CustomFabItemAdd(),
         ),
         Transform(
           transform: Matrix4.translationValues(0.0, _translateButton.value * 2.0, 0.0),
-          // child: image(),
           child: new CustomFabItemImage(),
         ),
         Transform(
           transform: Matrix4.translationValues(0.0, _translateButton.value, 0.0),
-          // child: inbox(),
           child: new CustomFabItemInbox(),
         ),
         baseButtonToggle(),
